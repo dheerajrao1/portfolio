@@ -59,6 +59,15 @@ const HeroSection = () => {
               >
                 Contact Me
               </button>
+              <a
+                href="https://drive.google.com/file/d/1cvwKYdJpQhxuS-kn3ns2F6ECWsJ6rWqz/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-hero"
+                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                View Resume
+              </a>
             </div>
 
             {/* Social Links */}
