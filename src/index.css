@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Dark Portfolio Theme */
+    --background: 180 23% 7%;
+    --foreground: 0 0% 95%;
+    
+    --card: 180 15% 10%;
+    --card-foreground: 0 0% 95%;
+    
+    --primary: 167 100% 40%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 167 85% 60%;
+    
+    --secondary: 180 10% 15%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --accent: 167 100% 40%;
+    --accent-foreground: 0 0% 5%;
+    
+    --muted: 180 10% 12%;
+    --muted-foreground: 0 0% 70%;
+    
+    --border: 180 10% 15%;
+    --input: 180 10% 12%;
+    --ring: 167 100% 40%;
+    
+    --radius: 0.75rem;
+    
+    /* Portfolio Specific Colors */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-bg: linear-gradient(135deg, hsl(var(--background)), hsl(180 20% 9%));
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.3);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-lg 
+           font-medium transition-all duration-300 hover:bg-primary hover:text-primary-foreground
+           hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] transform hover:scale-105;
+  }
+  
+  .btn-hero-filled {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-lg font-medium
+           transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)]
+           transform hover:scale-105 hover:bg-primary-glow;
+  }
+  
+  /* Section Styles */
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r 
+           from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+  
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-2 
+           hover:shadow-[0_20px_40px_hsl(0_0%_0%/0.4)] 
+           hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)];
+  }
+  
+  /* Skill Progress Animation */
+  .skill-progress {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .skill-progress-fill {
+    @apply h-full bg-gradient-to-r from-primary to-primary-glow rounded-full
+           transform transition-transform duration-1000 ease-out;
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Glow Animation */
+  .glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 0 20px hsl(var(--primary) / 0.2); }
+    to { box-shadow: 0 0 30px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.1); }
+  }
+  
+  /* Parallax Background */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Navigation Styles */
+  .nav-link {
+    @apply text-foreground/80 hover:text-primary transition-colors duration-300 
+           relative after:content-[''] after:absolute after:w-0 after:h-0.5 
+           after:bottom-0 after:left-0 after:bg-primary after:transition-all 
+           after:duration-300 hover:after:w-full;
+  }
+  
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 bg-card border border-border rounded-lg 
+           text-foreground placeholder:text-muted-foreground
+           focus:outline-none focus:ring-2 focus:ring-primary/50 
+           focus:border-primary transition-all duration-300;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
