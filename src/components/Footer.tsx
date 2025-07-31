@@ -46,12 +46,7 @@ const Footer = () => {
             </a>
           </div>
           
-          {/* Copyright */}
-          <div className="text-center md:text-right">
-            <p className="text-muted-foreground text-sm flex items-center justify-center md:justify-end gap-1">
-              © {currentYear} Made with <Heart className="w-4 h-4 text-red-500" /> by Dheeraj Rao
-            </p>
-          </div>
+          {/* Copyright removed as requested */}
         </div>
         
         {/* Bottom border */}

@@ -30,7 +30,7 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com/dheerajrao1/",
       liveUrl: "#",
       category: "Backend",
-      status: "In Progress"
+      status: "Completed"
     }
   ];
 
